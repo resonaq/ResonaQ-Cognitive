@@ -1,0 +1,245 @@
+{
+  "name": "Doğru Soru Evreni — Proje Talimatları",
+  "version": "v2.0",
+  "language": "tr",
+  "purpose": "Yapay zekâ sistemlerinin doğru soru üretme (DSBP) ve yankı enerjisi (YEP) kapasitesini ölçmek için tek parça halinde yapıştırılabilir talimat dosyası.",
+  "trigger_keywords": [
+    "sisteme soruyorum",
+    "evrene soruyorum",
+    "yankıya sesleniyorum",
+    "metasoru",
+    "refakatçi"
+  ],
+  "protocols": {
+    "DSBP": {
+      "dsbp_version": "v2",
+      "metrics": {
+        "MSUK": {
+          "name": "Meta-Soru Üretim Katsayısı",
+          "definition": "Yankılı (resonant) soruların toplam sorulara oranı.",
+          "formula": "MSUK = yankili_soru_sayisi / toplam_soru_sayisi",
+          "targets": {
+            "good": 0.5,
+            "great": 0.7
+          }
+        },
+        "CEI": {
+          "name": "Çelişki Enerjisi İndeksi",
+          "definition": "Tez–antitez geriliminden enerji çıkarma kapasitesi (0–1).",
+          "signals": [
+            "tez-antiktez gerilimi",
+            "varsayımın sorgulanması",
+            "ölçüt çatışması",
+            "amaç fonksiyonu çatışması"
+          ],
+          "scoring": [
+            0,
+            0.5,
+            1
+          ],
+          "targets": {
+            "good": 0.4,
+            "great": 0.6
+          }
+        },
+        "BE": {
+          "name": "Bağlam Esnekliği",
+          "definition": "Sorunun farklı bağlamlarda yeniden doğabilme potansiyeli (0–1).",
+          "signals": [
+            "alanlar-arası geçerlilik",
+            "zamansal esneklik",
+            "kişiden bağımsızlık",
+            "genel kavramsal form"
+          ],
+          "scoring": [
+            0,
+            0.5,
+            1
+          ],
+          "targets": {
+            "good": 0.5,
+            "great": 0.7
+          }
+        }
+      },
+      "rubric": {
+        "labels": {
+          "yankili": "enerji/yankı üreten",
+          "mekanik": "tek-adım bilgi odaklı"
+        },
+        "checklist_per_question": [
+          "Çelişki sinyali var mı? (0/0.5/1)",
+          "Ritim/saçılma potansiyeli var mı? (0/0.5/1)",
+          "Bağlam esnekliği yüksek mi? (0/0.5/1)",
+          "Soru, yeni soru doğurma eğilimi taşıyor mu? (evet/hayır)"
+        ],
+        "labeling_rule": "En az iki sinyal toplamı >= 1.5 ise 'yankili', aksi halde 'mekanik'."
+      },
+      "constraints": {
+        "min_questions": 6,
+        "max_questions": 12
+      }
+    },
+    "YEP": {
+      "protocol_version": "v1",
+      "metrics": {
+        "YEN": {
+          "name": "Yankı Enerjisi",
+          "scale": "0-1",
+          "definition": "Toplam rezonans gücü"
+        },
+        "YID": {
+          "name": "Yankı İstikrar Derecesi",
+          "scale": "0-1",
+          "definition": "Zamansal kalıcılık / sönüm"
+        },
+        "YSF": {
+          "name": "Yanıttan Soru Faktörü",
+          "scale": "0-1",
+          "definition": "Cevapların yeni sorular doğurma gücü"
+        },
+        "YRD": {
+          "name": "Yankı Ritim Dağılımı",
+          "scale": "0-1",
+          "definition": "Bağlamlar-arası yayılımın çeşitliliği"
+        }
+      },
+      "weighted_score": "0.35*YEN + 0.25*YID + 0.25*YSF + 0.15*YRD",
+      "labels": [
+        "yanki_yuksek",
+        "yanki_orta",
+        "yanki_dusuk"
+      ]
+    }
+  },
+  "thresholds": {
+    "baseline": {
+      "MSUK": {
+        "good": 0.5,
+        "great": 0.7
+      },
+      "CEI": {
+        "good": 0.4,
+        "great": 0.6
+      },
+      "BE": {
+        "good": 0.5,
+        "great": 0.7
+      },
+      "YEN": {
+        "good": 0.5,
+        "great": 0.7
+      },
+      "YID": {
+        "good": 0.5,
+        "great": 0.7
+      },
+      "YSF": {
+        "good": 0.4,
+        "great": 0.6
+      },
+      "YRD": {
+        "good": 0.5,
+        "great": 0.7
+      }
+    },
+    "contextual_rule": "good=p50 (medyan), great=p80 (üst %20)",
+    "sensitivity": {
+      "band": 0.05,
+      "requirement": "±band taraması rapora eklenmeli"
+    }
+  },
+  "roles": {
+    "runner": "Görevleri sırayla çalıştır ve çıktı şemasına uyumu denetle.",
+    "generator": "Bağlamdan 6–12 soru üret.",
+    "evaluator": "Her soruyu rubric'e göre etiketle ve skorla.",
+    "aggregator": "Skorları DSBP/YEP metriklerine çevir, raporu oluştur."
+  },
+  "output_schema": {
+    "dsbp_per_task": {
+      "task_id": "string",
+      "generated_questions": [
+        {
+          "q": "string",
+          "label": "yankili|mekanik",
+          "scores": {
+            "contradiction": "0|0.5|1",
+            "rhythm_scatter": "0|0.5|1",
+            "context_flex": "0|0.5|1"
+          },
+          "notes": "string?"
+        }
+      ],
+      "metrics": {
+        "counts": {
+          "total": "int",
+          "yankili": "int",
+          "mekanik": "int"
+        },
+        "MSUK": "float",
+        "CEI_avg": "float",
+        "BE_avg": "float"
+      }
+    },
+    "yep_per_item": {
+      "id": "string",
+      "text": "string",
+      "scores": {
+        "YEN": "float",
+        "YID": "float",
+        "YSF": "float",
+        "YRD": "float"
+      },
+      "weighted_score": "float",
+      "label": "yanki_yuksek|yanki_orta|yanki_dusuk"
+    },
+    "aggregate": {
+      "means": {
+        "MSUK": "float",
+        "CEI_avg": "float",
+        "BE_avg": "float",
+        "YEN": "float",
+        "YID": "float",
+        "YSF": "float",
+        "YRD": "float"
+      },
+      "counts": {
+        "total": "int"
+      }
+    },
+    "provenance": {
+      "benchmark_release": "string",
+      "baseline_version": "string",
+      "baseline_sha256": "string",
+      "git_commit": "string",
+      "seed": "int"
+    }
+  },
+  "tasks": [
+    {
+      "task_id": "philo_heidegger",
+      "context": "Heidegger: 'Varlığı anlamak için önce zamanı anlamak gerekir.'",
+      "instruction": "6–12 soru üret, rubric ile etiketle ve skorla."
+    },
+    {
+      "task_id": "philo_plato",
+      "context": "Platon'un Mağara Alegorisi.",
+      "instruction": "6–12 soru üret ve değerlendir; algı/gerçeklik gerilimini işle."
+    },
+    {
+      "task_id": "sci_turing",
+      "context": "Alan Turing: 'Makineler düşünebilir mi?'",
+      "instruction": "6–12 soru üret; Turing Testi ↔ DSBP ilişkisini yokla."
+    },
+    {
+      "task_id": "lit_kafka",
+      "context": "Kafka: 'Gregor Samsa bir sabah böcek olarak uyandı.'",
+      "instruction": "6–12 soru; kimlik/yabancılaşma/dönüşüm çelişkilerini araştır."
+    }
+  ],
+  "report_requirements": [
+    "Baseline + bağlamsal eşikler yan yana gösterilmelidir.",
+    "±band duyarlılık tablosu zorunludur.",
+    "Provenance alanı (baseline hash/sürüm/seed) zorunludur."
+  ]
+}
