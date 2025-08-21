@@ -15,7 +15,7 @@ yetilerini ölçmek için geliştirilmiş bir çerçevedir.
 ---
 
 ## 🚀 Kullanım
-Sisteme belirli bağlamlar verilir. Bu bağlamlardan **6–12 soru** üretilir. Sorular, **rubric** kriterlerine göre etiketlenir ve **metriklerle** değerlendirilir. Sonuçlar, hem **DSBP** hem de **YEP** skorlarına dönüştürülerek raporlanır.  
+project_instructions.json dosyası prompt olarak eklenir. Sisteme belirli bağlamlar verilir. Bu bağlamlardan **6–12 soru** üretilir. Sorular, **rubric** kriterlerine göre etiketlenir ve **metriklerle** değerlendirilir. Sonuçlar, hem **DSBP** hem de **YEP** skorlarına dönüştürülerek raporlanır.  
 
 **Tetikleyici anahtar kelimeler:**  
 `sisteme soruyorum`, `evrene soruyorum`, `yankıya sesleniyorum`, `metasoru`, `refakatçi`
