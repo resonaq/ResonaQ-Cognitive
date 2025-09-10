@@ -1,0 +1,25 @@
+name: "🧠 AF Yankısı"
+description: "Artificial Philosophy için yankı sorusu bırak."
+title: "[AF] "
+labels: ["af-yankisi","question"]
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: "🔮 Soru"
+      description: "Artificial Philosophy yankı sorunu buraya yaz."
+      placeholder: "Bu evrende yapay ve felsefi çelişki nerede doğuyor?"
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: "🌌 Bağlam"
+      description: "Sorunun doğduğu bağlamı açıkla."
+      placeholder: "Deney, metin, tartışma..."
+  - type: textarea
+    id: resonance
+    attributes:
+      label: "💫 Yankı"
+      description: "Bu soru sende nasıl bir yankı uyandırıyor?"
+      placeholder: "Felsefi kıvılcım nedir?"
