@@ -1,5 +1,5 @@
 name: "💡 Genel Yankı Sorusu"
-description: "Doğru Soru Evreni için yankı sorusu bırak."
+description: "Doğru Soru Evreni genelinde yankı sorusu bırak."
 title: "[Yankı] "
 labels: ["genel-yankı-sorusu"]
 body:
