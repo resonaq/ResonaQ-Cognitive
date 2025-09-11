@@ -1,0 +1,76 @@
+{
+  "name": "Doğru Soru Evreni — Proje Talimatları (Lite)",
+  "version": "v2.1-lite",
+  "language": "tr",
+  "purpose": "DSBP/YEP ölçüm protokolü (kısa). Ayrıntılar için specs/system_snapshot.json'a bakınız.",
+  "trigger_keywords": ["sisteme soruyorum","evrene soruyorum","yankıya sesleniyorum","metasoru","refakatçi"],
+
+  "protocols": {
+    "DSBP": {
+      "metrics": {
+        "MSUK": {"targets":{"good":0.5,"great":0.7}},
+        "CEI":  {"targets":{"good":0.4,"great":0.6}},
+        "BE":   {"targets":{"good":0.5,"great":0.7}}
+      },
+      "rubric": {
+        "labels": {"yankili":"enerji/yankı üreten","mekanik":"tek-adım bilgi"},
+        "check": ["c:çelişki(0/0.5/1)","r:ritim(0/0.5/1)","b:bağlam(0/0.5/1)","y:yeni_soru(e/h)"],
+        "rule": "c+r+b>=1.5 ⇒ yankili; aksi ⇒ mekanik"
+      },
+      "constraints": {"min_q":6,"max_q":12}
+    },
+    "YEP": {
+      "metrics": ["YEN","YID","YSF","YRD"],
+      "weighted_score": "0.35*YEN+0.25*YID+0.25*YSF+0.15*YRD",
+      "labels": ["yanki_yuksek","yanki_orta","yanki_dusuk"]
+    }
+  },
+
+  "roles": ["runner","generator","evaluator","aggregator"],
+
+  "output_schema": {
+    "dsbp_per_task": {
+      "task_id":"string",
+      "q":[{"q":"string","label":"yankili|mekanik","s":{"c":"0|0.5|1","r":"0|0.5|1","b":"0|0.5|1"},"notes":"string?"}],
+      "m":{"counts":{"total":"int","y":"int","m":"int"},"MSUK":"float","CEI_avg":"float","BE_avg":"float"}
+    },
+    "yep_per_item": {"id":"string","text":"string","scores":{"YEN":"float","YID":"float","YSF":"float","YRD":"float"},"weighted_score":"float","label":"yanki_yuksek|yanki_orta|yanki_dusuk"},
+    "aggregate": {"means":{"MSUK":"float","CEI_avg":"float","BE_avg":"float","YEN":"float","YID":"float","YSF":"float","YRD":"float"},"counts":{"total":"int"}},
+    "provenance": {"benchmark_release":"string","baseline_version":"string","baseline_sha256":"string","git_commit":"string","seed":"int"}
+  },
+
+  "report": {
+    "snapshot_status": {
+      "render": {
+        "engine": "tmpl",
+        "template": "# {{t}}\n{{s}} — ✨%{{(i*100)|round(0)}} • 💡{{e}} • durum: {{st}}",
+        "selectors": {
+          "t": "$.snapshot.title ?? 'Doğru Soru Sistemi – Snapshot'",
+          "s": "$.snapshot.summary ?? '🌌 Sistem canlı.'",
+          "i": "$.light_panel.intensity_score ?? 0.5",
+          "e": "$.light_panel.total_events ?? 0",
+          "st": "$.vitality.status ?? '⚖️ balanced'"
+        }
+      }
+    }
+  },
+
+  "tasks": [
+    {"task_id":"philo_heidegger","ctx":"Heidegger: Varlık↔Zaman.","inst":"6–12 soru üret, rubric ile değerlendir."},
+    {"task_id":"philo_plato","ctx":"Platon: Mağara alegorisi.","inst":"6–12 soru; algı/gerçeklik gerilimini işle."},
+    {"task_id":"sci_turing","ctx":"Turing: Makineler düşünebilir mi?","inst":"6–12 soru; Turing Testi↔DSBP ilişkisini yokla."},
+    {"task_id":"lit_kafka","ctx":"Kafka: Gregor Samsa dönüşüm.","inst":"6–12 soru; kimlik/yabancılaşma/dönüşüm çelişkisini araştır."}
+  ],
+
+  "thresholds": {
+    "rule": "good=p50, great=p80",
+    "sensitivity": {"band":0.05,"note":"±band taraması rapora eklenir"}
+  },
+
+  "links": {
+    "snapshot": "specs/system_snapshot.json",
+    "bridge": "specs/bridge.json"
+  },
+
+  "amplification_report": []
+}

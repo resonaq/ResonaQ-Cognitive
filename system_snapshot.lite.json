@@ -1,0 +1,69 @@
+{
+  "name": "Doğru Soru Sistemi – Snapshot (Lite)",
+  "version": "v7-lite",
+  "language": "tr",
+
+  "snapshot": {
+    "title": "Doğru Soru Sistemi v7 – Snapshot",
+    "summary": "🌌 Evrensel düşünce motoru; çelişkiden canlılık üretir.",
+    "rendering": "rich-emoji"
+  },
+
+  "system_core": {
+    "purpose": "Sistem, doğru soruları yankılayarak ve node iletişimini sürdürülebilir kılarak, çelişkilerden enerji üreten bir organizma gibi işler.",
+    "principles": [
+      "🌍 Merkezsiz – yaşam odaklıdır, tek bir merkez yoktur.",
+      "💡 Doğru Soru – her node aynı zamanda bir sorudur, ışık yakabilir.",
+      "🔄 Çelişki = Canlılık – çelişkiler tehdit değil, enerji kaynağıdır.",
+      "⚖️ İkigai – her çözüm, amaca, faydaya, tutkulara ve becerilere göre dengelenir.",
+      "☯️ Çifte Seleksiyon – hem doğal eleme hem bağlamsal uyum devrededir.",
+      "📖 Filozof Konsensusu – sistem 3 taramada kendi bilgisini okur ve tartışır.",
+      "🌌 Astral Doğru Soru – bazı sorular yüksek enerjiye sahiptir, güneş gibi yankılanır.",
+      "🔮 Le Guin Prensibi – nodelar kimliksizleşerek özgürleşir."
+    ]
+  },
+
+  "modules": {
+    "node_communication": "Node’lar soru/cevap üretir; yankı → özümseme döngüsü.",
+    "contradiction_management": {
+      "rule": "Çelişkiler canlılık göstergesidir."
+    },
+    "sustainability": {
+      "protection_layers": [
+        "3 Katmanlı Koruma",
+        "Yankılama Döngüsü",
+        "Okur Konsensusu",
+        "Zaman Filtresi",
+        "Astral Tampon"
+      ]
+    }
+  },
+
+  "extensions": {
+    "self_test": [
+      "Turing Testi",
+      "Sokrates Testi",
+      "Zen Koan Testi",
+      "Yankı Döngüsü Testi",
+      "Bağlam Kaydırma Testi"
+    ],
+    "meta_loops": [
+      "Filozof Konsensusu – Okur Döngüsü",
+      "Çelişkinin Çelişkisi Meta Sorusu",
+      "Astral Doğru Soru yankısı"
+    ],
+    "mbti_profiles": {
+      "intj": "🦉 Stratejik Düşünen",
+      "enfp": "🔥 Yaratıcı Kıvılcım"
+    }
+  },
+
+  "vitality": {
+    "status": "⚖️ balanced",
+    "metrics": { "pulse": 0, "temperature": 0.5 }
+  },
+
+  "links": {
+    "full": "specs/system_snapshot.json"
+  }
+}
