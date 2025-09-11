@@ -6,20 +6,21 @@
 ---
 
 ## 🔭 İçindekiler
-1. [Kozmik Özet (TL;DR)](#kozmik-özet-tldr)
-2. [Ontoloji (Snapshot): Canlı Sistem Katmanları](#ontoloji-snapshot-canlı-sistem-katmanları)
-3. [Köprü: Snapshot ↔ Protokol](#köprü-snapshot--protokol)
+1. [Kozmik Özet (TL;DR)](#kozmik-ozet-tldr)
+2. [Ontoloji (Snapshot): Canlı Sistem Katmanları](#ontoloji-snapshot-canli-sistem-katmanlari)
+3. [Köprü: Snapshot ↔ Protokol](#kopru-snapshot--protokol)
 4. [Protokoller: DSBP & YEP](#protokoller-dsbp--yep)
 5. [Experiment Protocol (full & lite)](#experiment-protocol-full--lite)
-6. [Çalışma Akışı ve Roller](#çalışma-akışı-ve-roller)
+6. [Çalışma Akışı ve Roller](#calisma-akisi-ve-roller)
 7. [Runtimes: `runtime_params`, `light_panel`](#runtimes-runtime_params-light_panel)
-8. [Depo Yapısı: `runs/` ve `specs/`](#depo-yapısı-runs-ve-specs)
-9. [Astral Soru Paketleri (örnekler)](#astral-soru-paketleri-örnekler)
-10. [Skorların Yorumlanması](#skorların-yorumlanması)
-11. [Sürdürülebilirlik ve Koruma Katmanları](#sürdürülebilirlik-ve-koruma-katmanları)
-12. [Kozmik Anlatı: Big Bang → Son Saçılım](#kozmik-anlatı-big-bang--son-saçılım)
-13. [Katkı ve Lisans](#katkı-ve-lisans)
-14. [Ek: JSON Şemaları ve Önerilen Varsayılanlar](#ek-json-şemaları-ve-önerilen-varsayılanlar)
+8. [Depo Yapısı: `runs/` ve `specs/`](#depo-yapisi-runs-ve-specs)
+9. [Astral Soru Paketleri (örnekler)](#astral-soru-paketleri-ornekler)
+10. [Skorların Yorumlanması](#skorlarin-yorumlanmasi)
+11. [Sürdürülebilirlik ve Koruma Katmanları](#surdurulebilirlik-ve-koruma-katmanlari)
+12. [Kozmik Anlatı: Big Bang → Son Saçılım](#kozmik-anlati-big-bang--son-sacilim)
+13. [Katkı ve Lisans](#katki-ve-lisans)
+14. [Ek: JSON Şemaları ve Önerilen Varsayılanlar](#ek-json-semalari-ve-onerilen-varsayilanlar)
+
 
 ---
 
@@ -146,7 +147,7 @@
 
 ## 🗂️ Depo Yapısı: `runs/` ve `specs/`
 - **`runs/`** → Deney çıktıları, tarih‑damgalı klasörler, rapor JSON/MD dosyaları.  
-- **`specs/`** → Şema/rubric sözleşmeleri (etiket kümesi, metrik tarifleri, JSON şemaları).  
+- **`specs/`** → Köprü ve şema dosyaları. (Şu an: bridge.json, ileride rubric veya ek metrik tarifleri eklenebilir.) 
 - **Diğer:** `system_snapshot(.lite).json`, `experiment_protocol(.lite).json`, `CONTRIBUTING.md`, `LICENSE`.
 
 > **Ne yapmaya çalıştık?**  
