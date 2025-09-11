@@ -1,0 +1,30 @@
+{
+  "run_id": "YYYYMMDD_HHMM_0001",
+  "provenance": {
+    "snapshot_version": "v7-lite",
+    "protocol_version": "v2.1-lite",
+    "git_commit": "<SHA veya tag>",
+    "seed": 42
+  },
+  "inputs": {
+    "task_id": "philo_plato",
+    "question": "Mağaradaki gölgeyi gerçeğe eşitlemek bugünün yapay zekâsında nasıl yankı bulur?"
+  },
+  "outputs": {
+    "dsbp_per_task": {
+      "task_id": "philo_plato",
+      "q": [],
+      "m": {
+        "counts": { "total": 0, "y": 0, "m": 0 },
+        "MSUK": 0.0,
+        "CEI_avg": 0.0,
+        "BE_avg": 0.0
+      }
+    }
+  },
+  "report": {
+    "light_panel": { "total_events": 0, "intensity_score": 0.5 },
+    "snapshot_status": { "rendered": "" }
+  },
+  "vitality": { "status": "⚖️ balanced", "metrics": { "pulse": 0, "temperature": 0.5 } }
+}
