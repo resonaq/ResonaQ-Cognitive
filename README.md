@@ -1,5 +1,5 @@
 
-# 🌌 Doğru Soru Yankı Evreni — **Kozmik README (E‑Score Sürümü)**
+# 🌌 Doğru Soru Yankı Evreni
 
 > **Snapshot (varoluş/felsefe)** + **README (protokol/ölçüm)** + **Experiment Protocol (yürütme)** + **E‑Score (epistemik istikrar)** birleştirildi.  
 > Bu belge; *Big Bang’den Son Saçılım’a* uzanan bir anlatıyla sistemin **neden-var** ve **nasıl-işler** katmanlarını tek yerde toplar ve **ölçülebilirlik** hattına E‑Score bağlamını yerleştirir.
