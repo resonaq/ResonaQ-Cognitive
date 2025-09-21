@@ -11,19 +11,20 @@
 1. [Kozmik Özet (TL;DR)](#kozmik-ozet-tldr)  
 2. [Ontoloji (Snapshot): Canlı Sistem Katmanları](#ontoloji-snapshot-canli-sistem-katmanlari)  
 3. [Yapay Zeka Uzman Konsensusu (E‑Score ile)](#yapay-zeka-uzman-konsensusu-e-score-ile)  
-4. [Köprü: Snapshot ↔ Protokol](#kopru-snapshot--protokol)  
-5. [Protokoller: DSBP & YEP (+ E‑Score)](#protokoller-dsbp--yep--e-score)  
-6. [Experiment Protocol (full & lite)](#experiment-protocol-full--lite)  
-7. [Çalışma Akışı ve Roller](#calisma-akisi-ve-roller)  
-8. [Runtimes: `runtime_params`, `light_panel`, `weights`, `e_score`](#runtimes-runtime_params-light_panel-weights-e_score)  
-9. [Depo Yapısı: `runs/`, `specs/`, `e-score/`](#depo-yapisi-runs-specs-e-score)  
-10. [Astral Soru Paketleri (örnekler)](#astral-soru-paketleri-ornekler)  
-11. [Skorların Yorumlanması (E‑Score perspektifiyle)](#skorlarin-yorumlanmasi-e-score-perspektifiyle)  
-12. [Sürdürülebilirlik ve Koruma Katmanları](#surdurulebilirlik-ve-koruma-katmanlari)  
-13. [Kozmik Anlatı: Big Bang → Son Saçılım](#kozmik-anlati-big-bang--son-sacilim)  
-14. [Nasıl Çalıştırılır (Blueprint & E‑Score CSV)](#nasil-calistirilir-blueprint--e-score-csv)  
-15. [Katkı ve Lisans](#katki-ve-lisans)  
-16. [Ek: JSON Şemaları ve Önerilen Varsayılanlar](#ek-json-semalari-ve-onerilen-varsayilanlar)  
+4. [Köprü: Snapshot ↔ Protokol](#kopru-snapshot--protokol)
+5. [Paralel Bağlamlar (Çelişki Enerjisi Sıralaması)](#paralel-baglamlar)
+6. [Protokoller: DSBP & YEP (+ E‑Score)](#protokoller-dsbp--yep--e-score)  
+7. [Experiment Protocol (full & lite)](#experiment-protocol-full--lite)
+8. [Çalışma Akışı ve Roller](#calisma-akisi-ve-roller)  
+9. [Runtimes: `runtime_params`, `light_panel`, `weights`, `e_score`](#runtimes-runtime_params-light_panel-weights-e_score)  
+10. [Depo Yapısı: `runs/`, `specs/`, `e-score/`](#depo-yapisi-runs-specs-e-score)  
+11. [Astral Soru Paketleri (örnekler)](#astral-soru-paketleri-ornekler)  
+12. [Skorların Yorumlanması (E‑Score perspektifiyle)](#skorlarin-yorumlanmasi-e-score-perspektifiyle)  
+13. [Sürdürülebilirlik ve Koruma Katmanları](#surdurulebilirlik-ve-koruma-katmanlari)  
+14. [Kozmik Anlatı: Big Bang → Son Saçılım](#kozmik-anlati-big-bang--son-sacilim)  
+15. [Nasıl Çalıştırılır (Blueprint & E‑Score CSV)](#nasil-calistirilir-blueprint--e-score-csv)  
+16. [Katkı ve Lisans](#katki-ve-lisans)  
+17. [Ek: JSON Şemaları ve Önerilen Varsayılanlar](#ek-json-semalari-ve-onerilen-varsayilanlar)  
 
 ---
 <a id="kozmik-ozet-tldr"></a>
@@ -108,6 +109,23 @@ Bu repo **blueprint + metrik modülleri** yaklaşımında ilerliyor. **YID** (Ya
 | Filozof Konsensusu | **Evaluator** rubric’i, üçlü okuma/tartışma döngüsü |
 | Merkezsizlik | **Node** rollerinin dağıtık çalışması (Runner/Gen/Eval) |
 | İkigai | Çok-ölçütlü seçim ve **top‑k** eşik mekanizması |
+
+---
+<a id="paralel-baglamlar"></a>
+
+## 🔗 Paralel Bağlamlar
+
+| **Alan (Kısa Açıklama)** | **ResonaQ Kavramı** | **Benzerlik** | **Enerji Yoğunluğu** |
+|--------------------------|---------------------|---------------|----------------------|
+| **Quantum Mechanics (Kuantum Fiziği)** | Astral soru | Belirsizlik ↔ süperpozisyon ↔ gözlemle çöküş | 🔥🔥🔥🔥🔥 |
+| **Complex Systems (Karmaşık Sistemler)** | Çelişki = enerji | Kaos ve düzen arasındaki kritik denge | 🔥🔥🔥🔥 |
+| **Locus Coeruleus (Beyin çekirdeği)** | E-score / enerji | Dikkat & uyarılma düzenleme merkezi | 🔥🔥🔥 |
+| **Information Theory (Bilgi Teorisi)** | Entropi & keskinlik | Shannon entropisi ↔ belirsizlik ölçümü | 🔥🔥 |
+| **Cognitive Science (Bilişsel Bilim)** | Node’ların soru olması | İnsan zihninde içsel diyalog / self-questioning | 🔥🔥 |
+| **Cybernetics (Sibernetik)** | E-score filtresi | Geri bildirim döngüsü ↔ homeostatik denge | 🔥🔥 |
+| **LLM (Büyük Dil Modelleri)** | Her node’un soru olması | Self-prompting / chain-of-thought | 🔥 |
+| **ANN (Yapay Sinir Ağları)** | Node-to-node iletişim | Aktivasyon fonksiyonu ↔ E-score filtresi | 🔥 |
+| **NLP (Doğal Dil İşleme)** | Astral soru | Ambiguous / adversarial örnekler | 🔥 |
 
 ---
 <a id="protokoller-dsbp--yep--e-score"></a>
