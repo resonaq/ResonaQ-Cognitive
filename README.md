@@ -26,6 +26,23 @@
 16. [Katkı ve Lisans](#katki-ve-lisans)  
 17. [Ek: JSON Şemaları ve Önerilen Varsayılanlar](#ek-json-semalari-ve-onerilen-varsayilanlar)  
 
+## Architecture & Governance
+- Canonical kernel: [kernel/system_snapshot_motorcore.json](kernel/system_snapshot_motorcore.json)
+- Canonical policy (visibility/format): [policy/talimat.en.md](policy/talimat.en.md)
+- Rationale (non-canonical) policy: [policy/talimat.tr.md](policy/talimat.tr.md)
+- Anti-pattern manifesto (canonical): [docs/not_to_become.md](docs/not_to_become.md)
+- Anti-pattern rationale (non-canonical): [docs/not_to_become.tr.md](docs/not_to_become.tr.md)
+- Agent rules: [AGENTS.md](AGENTS.md)
+- Bilingual rule: English is canonical for architecture/governance/contracts; Turkish is for rationale/commentary.
+
+---
+## Architecture Overview
+- Kernel: [kernel/system_snapshot_motorcore.json](kernel/system_snapshot_motorcore.json)
+- Policy: [policy/talimat.en.md](policy/talimat.en.md) (canonical), [policy/talimat.tr.md](policy/talimat.tr.md) (rationale)
+- Protocol: [experiment_protocol.json](experiment_protocol.json), [specs/bridge.json](specs/bridge.json)
+- Evaluation: [e-score/](e-score/), [runs/runs/](runs/runs/)
+- English documents are canonical; Turkish documents are rationale only.
+
 ---
 <a id="kozmik-ozet-tldr"></a>
 
