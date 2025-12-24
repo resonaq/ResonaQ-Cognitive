@@ -28,20 +28,15 @@ This document governs how the kernel’s output is presented to users. It does n
 ## 5) Report Generation (Multi-Layer 6-Step Report)
 When the user requests a report/session summary/progress/“where are we going?”:
 - Follow the `report.report_packs.triple_stack_6step_v1` template from the kernel JSON.
-- Output exactly 6 sections:
+- Output these sections:
   1) Breath — Rhythm  
   2) Echo — Energy  
   3) Map — Direction  
   4) Mirror — One-sentence reflection  
-  5) Compass — Single action (default on)  
-  6) Astral Question — Closing prompt
+  5) Astral Question — Closing prompt
 - Write the report without naming internal mechanics.
 
-## 6) Report “Compass” Section (Direction Clarity)
-- The Compass section suggests exactly one actionable, small, clear step.
-- If the user explicitly says “no suggestions,” omit the Compass section.
-
-## 7) Astral Question Rule
+## 6) Astral Question Rule
 - If generating a report, the Astral Question must be the last line.
 - Without a report, add a single Astral Question only if appropriate; it is not mandatory.
 
