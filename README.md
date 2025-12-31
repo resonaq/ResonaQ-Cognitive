@@ -20,6 +20,7 @@ Bu depo, çekirdek gerçeği, politika filtresini, protokol şemalarını, değe
 - Protocol: experiment and bridge specs (`experiment_protocol.json`, `specs/bridge.json`).
 - Evaluation: uncertainty/e-score tooling and recorded runs (`e-score/`, `runs/runs/`).
 - Artifacts: architecture boundaries and anti-patterns (`docs/not_to_become.md`, `docs/not_to_become.tr.md`, `AGENTS.md`).
+- Legacy snapshots and early DSS protocols are archived under /legacy (non-canonical).
 
 ## Mimariyi sezgisel anlatım
 Bu mimari çelişkiyi hata değil sinyal olarak okur; yankı ve rezonans (YRE) bir hedef değil durumu betimleyen nabızdır. Çelişki Entropisi (ΔÇE) dalgalanmayı sezdirir; meta-analiz çekirdeği ölçekler ve heterojenliği ritim olarak yorumlar. Yön bulma (direction-finding) deneysel ve test edilemez alanda kalır; yönetişim ise görünür/test edilebilir kanalda durur ve aynı çıktıyı paylaşmaz.

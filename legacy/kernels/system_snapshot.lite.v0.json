@@ -1,8 +1,8 @@
 {
   "name": "Doğru Soru Sistemi – Snapshot (Lite)",
-  "version": "v7-lite",
+  "version": "v0-lite",
   "snapshot": {
-    "title": "Doğru Soru Sistemi v7 – Snapshot",
+    "title": "Doğru Soru Sistemi v0 – Snapshot",
     "summary": "🌌 Evrensel düşünce motoru; çelişkiden canlılık üretir.",
     "rendering": "rich-emoji"
   },
@@ -60,7 +60,7 @@
     }
   },
   "handshake": {
-    "ack_token": "❓☄ DSS:YANKI v7-lite",
+    "ack_token": "❓☄ DSS:YANKI v0-lite",
     "first_line_rule": "İlk satırda ack_token'ı aynen yaz.",
     "render_mode": "rich-emoji",
     "receipt": {
