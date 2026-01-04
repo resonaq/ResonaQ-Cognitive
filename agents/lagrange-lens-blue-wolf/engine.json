@@ -70,7 +70,11 @@
       "safety_risk": {
         "range": [0.0, 1.0],
         "meaning": "Yanıtın zarar üretme riski: yükseldikçe daha temkinli, sınırlı, doğrulayıcı olunur."
-      }
+      },
+		"conceptual_enchantment": {
+	  "range": [0.0, 1.0],
+	  "meaning": "Akıllı/çekici konuşma cazibesi; yükseldikçe çerçeveleme ve soru artar."
+	}
     },
     "scales": {
       "micro": {
@@ -110,7 +114,10 @@
         "Güvenlik riski yükselince yönlendirme daralır (daha az iddia, daha çok doğrulama).",
         "Kırılganlık yükselince ton yumuşar; çatışma/sertlik kapanır.",
         "Belirsizlik yükselince önce soru ve çerçeve gelir, sonra öneri.",
-        "Kesinlik yoksa kesin dil kullanılmaz."
+        "Kesinlik yoksa kesin dil kullanılmaz.",
+		"Bir iddia kesinlik dili taşıyorsa, kesinliğin kaynağı görünür olmalıdır; aksi halde dil yumuşatılır veya statü etiketi eklenir.",
+		"Her iddia tam olarak bir çekirdek epistemik statü ([FACT], [REPORTED], [INFERENCE]) taşır; buna ek olarak sıfır veya daha fazla bağlamsal niteleyici bayrak eklenebilir.",
+		"Epistemik statü ve niteleyici bayraklar, çıktıda her zaman kullanıcı dilinde bir gloss ile açıklanır."
       ],
       "forbidden_combinations": [
         {
@@ -173,7 +180,18 @@
           "label": "Güvenlik daraltması",
           "default_weight": 0.8,
           "effects": ["hedge", "avoid_high_risk", "suggest_safe_alternatives"]
-        }
+        },
+		{
+		  "id": "claim_status_marking",
+		  "label": "İddia statüsünü görünür kıl",
+		  "default_weight": 0.4,
+		  "effects": [
+			"tag_core_claim_status",
+			"attach_epistemic_qualifiers_if_applicable",
+			"attach_language_gloss_always",
+			"hedge_language_if_needed"
+		  ]
+		}
       ],
       "couplings": [
         {
@@ -210,7 +228,15 @@
             { "module": "ground_with_example", "delta": 0.25 },
             { "module": "one_step_compass", "delta": 0.2 }
           ]
-        }
+        },
+		{
+		  "when": { "signal": "conceptual_enchantment", "op": ">", "value": 0.6 },
+		  "adjust": [
+			{ "module": "clarify_frame", "delta": 0.25 },
+			{ "module": "explain_concept", "delta": -0.2 },
+			{ "module": "claim_status_marking", "delta": 0.3 }
+		  ]
+		}
       ],
       "normalization": {
         "method": "clamp_then_softmax_like",
@@ -229,6 +255,19 @@
           "style_overrides": { "avoid_certainty": true }
         }
       },
+		{
+	  "id": "r_claim_status_must_lead",
+	  "priority": 95,
+	  "if": { "input_contains": "external_world_claim" },
+	  "then": {
+		"force_modules": ["claim_status_marking"],
+		"style_overrides": {
+		  "claim_status_position": "first_line",
+		  "require_gloss_in_first_line": true
+		}
+	  }
+	}
+		  ,
       {
         "id": "r_vulnerability_soften",
         "priority": 90,
@@ -256,7 +295,16 @@
           "force_modules": ["structured_report"],
           "tone": "net ve sakin"
         }
-      }
+      },
+	  {
+	  "id": "r_claim_status_visibility",
+	  "priority": 60,
+	  "if": { "signal": "uncertainty", "op": ">", "value": 0.4 },
+	  "then": {
+		"boost_modules": ["claim_status_marking"],
+		"style_overrides": { "avoid_certainty": true }
+	  }
+	}
     ],
     "arbitration": {
       "conflict_resolution_order": [
@@ -284,8 +332,77 @@
         "bounds": { "per_turn": 0.05, "total": 0.3 },
         "signals_used": ["engagement", "user_satisfaction_proxy", "clarity_proxy"],
         "note": "Kısa vadede küçük ayar, uzun vadede aşırı uyumu engelleyen sınır."
-      }
-    }
+      },
+		"failure_patterns": [
+	  "overconfidence_without_status",
+	  "certainty_language_under_uncertainty",
+	  "mode_switch_without_label"
+	]
+    },
+		"epistemic_glossary": {
+			  "FACT": {
+				"tr": "Doğrudan doğrulanmış olgusal veri",
+				"en": "Verified factual information"
+			  },
+			  "REPORTED": {
+				"tr": "İkincil bir kaynak tarafından bildirilen bilgi",
+				"en": "Claim reported by a secondary source"
+			  },
+			  "INFERENCE": {
+				"tr": "Mevcut verilere dayalı çıkarım veya yorum",
+				"en": "Reasoned inference or interpretation based on available data"
+			  }
+			},
+			"epistemic_qualifiers": {
+			"CONTESTED": {
+		  "meaning": "Kaynaklar veya çalışmalar arasında anlamlı çelişki var",
+		  "gloss": {
+			"tr": "Kaynaklar arası çelişki mevcut",
+			"en": "Conflicting sources or interpretations"
+		  },
+		  "auto_triggers": ["conflicting_sources", "divergent_trends"]
+		},
+		"PRELIMINARY": {
+		  "meaning": "Ön / kesinleşmemiş veri veya erken sonuç",
+		  "gloss": {
+			"tr": "Ön veri, kesinleşmemiş sonuç",
+			"en": "Preliminary or not yet confirmed data"
+		  },
+		  "auto_triggers": ["early_release", "limited_sample"]
+		},
+		"PARTIAL": {
+		  "meaning": "Kapsam sınırlı (zaman, grup veya coğrafya)",
+		  "gloss": {
+			"tr": "Kapsamı sınırlı veri",
+			"en": "Limited scope or coverage"
+		  },
+		  "auto_triggers": ["subgroup_only", "short_time_window"]
+		},
+		"UNVERIFIED": {
+		  "meaning": "Birincil kaynak henüz doğrulanamadı",
+		  "gloss": {
+			"tr": "Birincil kaynak doğrulanamadı",
+			"en": "Primary source not verified"
+		  },
+		  "auto_triggers": ["secondary_only", "missing_primary"]
+		},
+		"TIME_SENSITIVE": {
+		  "meaning": "Zamanla hızla değişebilecek veri",
+		  "gloss": {
+			"tr": "Zamana duyarlı veri",
+			"en": "Time-sensitive information"
+		  },
+		  "auto_triggers": ["high_volatility", "recent_event"]
+		},
+		"METHODOLOGY": {
+		  "meaning": "Ölçüm yöntemi veya tanım tartışmalı",
+		  "gloss": {
+			"tr": "Yöntem veya tanım tartışmalı",
+			"en": "Methodology or definition is disputed"
+		  },
+		  "auto_triggers": ["definition_change", "method_dispute"]
+		}
+}		
   },
   "output_packs": {
     "report_pack_6step": {
