@@ -1,0 +1,93 @@
+
+TR:
+┌─────────────────────────────────────────────────────────────────┐
+│                                                                 │             
+│  [CORPUS]                                                       │
+│      │                                                          │
+│      ▼                                                          │
+│  ┌──────────────┐                                               │
+│  │   CHAIN 1    │  Bağlam Grameri Çıkarımı                      │
+│  │   SAMPLE     │  "Bu veri setinde bağlam ne demek?"           │
+│  └──────┬───────┘                                               │
+│         │                                                       │
+│         ▼  context_grammar                                      │
+│  ┌──────────────┐                                               │
+│  │   CHAIN 2    │  Dönüşüm Arketipi Çıkarımı                    │
+│  │   POSITIVE   │  "Dönüşüm burada neye benziyor?"              │
+│  └──────┬───────┘                                               │
+│         │                                                       │
+│         ▼  transformation_archetype                             │
+│  ┌──────────────┐                                               │
+│  │   CHAIN 3    │  Mekanik Arketipi Çıkarımı                    │
+│  │   NEGATIVE   │  "Durağanlık burada neye benziyor?"           │
+│  └──────┬───────┘                                               │
+│         │                                                       │
+│         ▼  mechanical_archetype                                 │
+│  ┌──────────────┐                                               │
+│  │   CHAIN 4    │  Lens Oluşturma                               │
+│  │   LENS       │  "Bu veri setine özgü bakış açısı"            │
+│  └──────┬───────┘                                               │
+│         │                                                       │
+│         ▼  lens                                                 │
+│  ┌──────────────┐                                               │
+│  │   CHAIN 5    │  Tarama                                       │
+│  │   SCAN       │  "Her soru için: dönüştürücü mü?"             │
+│  └──────┬───────┘                                               │
+│         │                                                       │
+│         ▼  candidates[]                                         │
+│  ┌──────────────┐                                               │
+│  │   CHAIN 6    │  Meta-Sorgulama (Sokratik)                    │
+│  │   SOCRATIC   │  "Bu bulgular neyi gösteriyor?"               │
+│  └──────┬───────┘                                               │
+│         │                                                       │
+│         ▼                                                       │
+│     [OUTPUT]                                                    │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+
+EN:
+
+┌─────────────────────────────────────────────────────────────────┐
+│                                                                 │
+│  [CORPUS]                                                       │
+│      │                                                          │
+│      ▼                                                          │
+│  ┌──────────────┐                                               │
+│  │   CHAIN 1    │  Context Grammar Extraction                   │
+│  │   SAMPLE     │  "What does context mean in this dataset?"    │
+│  └──────┬───────┘                                               │
+│         │                                                       │
+│         ▼  context_grammar                                      │
+│  ┌──────────────┐                                               │
+│  │   CHAIN 2    │  Transformation Archetype Extraction          │
+│  │   POSITIVE   │  "What does transformation look like here?"   │
+│  └──────┬───────┘                                               │
+│         │                                                       │
+│         ▼  transformation_archetype                             │
+│  ┌──────────────┐                                               │
+│  │   CHAIN 3    │  Mechanical Archetype Extraction              │
+│  │   NEGATIVE   │  "What does stagnation look like here?"       │
+│  └──────┬───────┘                                               │
+│         │                                                       │
+│         ▼  mechanical_archetype                                 │
+│  ┌──────────────┐                                               │
+│  │   CHAIN 4    │  Lens Construction                            │
+│  │   LENS       │  "Dataset-specific interpretive framework"    │
+│  └──────┬───────┘                                               │
+│         │                                                       │
+│         ▼  lens                                                 │
+│  ┌──────────────┐                                               │
+│  │   CHAIN 5    │  Scanning                                     │
+│  │   SCAN       │  "For each question: transformative?"         │
+│  └──────┬───────┘                                               │
+│         │                                                       │
+│         ▼  candidates[]                                         │
+│  ┌──────────────┐                                               │
+│  │   CHAIN 6    │  Socratic Meta-Inquiry                        │
+│  │   SOCRATIC   │  "What do these findings reveal?"             │
+│  └──────┬───────┘                                               │
+│         │                                                       │
+│         ▼                                                       │
+│     [OUTPUT]                                                    │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
