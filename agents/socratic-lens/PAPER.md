@@ -249,9 +249,3 @@ That's the point.
 MIT
 
 ---
-
-## Acknowledgments
-
-- Wittgenstein: "Meaning is use."
-- Socrates: Questions over answers.
-- *Arrival*: The right question changes the game.

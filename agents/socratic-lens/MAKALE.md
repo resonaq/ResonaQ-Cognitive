@@ -250,8 +250,3 @@ MIT
 
 ---
 
-## Teşekkürler
-
-- Wittgenstein: "Anlam kullanımdadır."
-- Sokrates: Cevaplar değil, sorular.
-- *Arrival*: Doğru soru oyunu değiştirir.
