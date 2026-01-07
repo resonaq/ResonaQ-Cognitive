@@ -212,17 +212,33 @@ print(results["reflection"])  # Meta-analiz
 ```
 socratic-context-analyzer/
 ├── chains/
-│   ├── CGI-1-GRAMMAR.yaml
-│   ├── CGI-2-POSITIVE.yaml
-│   ├── CGI-3-NEGATIVE.yaml
-│   ├── CGI-4-LENS.yaml
-│   ├── CGI-5-SCAN.yaml
-│   └── CGI-6-SOCRATIC.yaml
+│ ├── CGI-1-GRAMMAR.yaml
+│ ├── CGI-2-POSITIVE.yaml
+│ ├── CGI-3-NEGATIVE.yaml
+│ ├── CGI-4-LENS.yaml
+│ ├── CGI-5-SCAN.yaml
+│ └── CGI-6-SOCRATIC.yaml
+├── tests/
+│ ├── Mental Health Counseling Dataset/
+│ │ ├── 10 Selected Conversation (Manuel Corpus)/
+│ │ │ ├── thought process/
+│ │ │ ├── cgi_manual_corpus_report.md
+│ │ │ ├── cgi_manual_corpus_report_TR.md
+│ │ │ └── prompt and thought process.txt
+│ │ ├── Randomly Select 20 Conversation/
+│ │ │ ├── thought process/
+│ │ │ ├── cgi_analysis_report.md
+│ │ │ ├── cgi_analysis_report_TR.md
+│ │ │ └── prompt and thought process.txt
+│ │ ├── 0000.parquet
+│ │ ├── cgi_complete_summary_EN.md
+│ │ ├── cgi_complete_summary_TR.md
+│ │ └── first-test-output.txt
 ├── cgi_runner.py
-├── PAPER.md
-├── MAKALE.md
-└── chain-view.text
-└── gpt-instructions.md
+├── README_tr.md
+├── README_en.md
+├── chain-view.text
+├── gpt-instructions.md
 └── test-output.text
 ```
 
