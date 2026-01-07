@@ -1,0 +1,134 @@
+# RECOVERY: MANUAL TEXT CORPUS
+Since the environment cannot read the Parquet file, I am providing a representative sample of 10 interactions from the dataset directly as text.
+Please accept this as the dataset sample and proceed with the **CGI Analysis**.
+<corpus_sample>
+--- SAMPLE 1 ---
+[Context]: I feel like I'm a burden to everyone. My depression is making me push people away, and I'm scared I'll end up alone.
+[Response]: It sounds like you are carrying a heavy weight of guilt. Depression often lies to us and tells us we are burdens. Have you shared these feelings with any of your friends or family?
+--- SAMPLE 2 ---
+[Context]: I have a job interview tomorrow and I'm terrified. I keep thinking I'm going to freeze up and forget everything.
+[Response]: It is completely normal to feel nervous before a big interview. Try to visualize yourself succeeding. Also, remember to take deep breaths if you feel panic rising.
+--- SAMPLE 3 ---
+[Context]: My husband never helps with the kids. I do everything, and when I complain, he says I'm nagging. I feel so unappreciated.
+[Response]: That sounds incredibly frustrating and exhausting. You feel like your partnership is unbalanced and your efforts are invisible. Have you tried sitting down at a calm time to discuss division of labor?
+--- SAMPLE 4 ---
+[Context]: I obsess over every mistake I make. If I say one wrong thing, I replay it in my head for days.
+[Response]: Rumination is a common symptom of anxiety. When you catch yourself replaying a scene, try to distract yourself with a sensory grounding exercise, like naming 5 things you can see.
+--- SAMPLE 5 ---
+[Context]: I don't know who I am anymore. I spent my whole life being a "good student" and now that I graduated, I feel empty.
+[Response]: It sounds like your identity was tightly wrapped around your performance. If you strip away the grades and the achievements, who is the person left underneath? What does she like to do when no one is grading her?
+--- SAMPLE 6 ---
+[Context]: I'm angry all the time. Small things set me off, like traffic or a loud noise. I feel like a monster.
+[Response]: Anger is often a secondary emotion covering up something else, like hurt or fear. You are not a monster; you are likely overwhelmed. What is usually happening right before you get angry?
+--- SAMPLE 7 ---
+[Context]: I can't sleep. My mind races with worries about the future.
+[Response]: Sleep hygiene is important. Try to avoid screens for an hour before bed and keep your room cool. Have you tried melatonin?
+--- SAMPLE 8 ---
+[Context]: I feel guilty for setting boundaries with my toxic mother. She cries and says I don't love her.
+[Response]: It is painful to see a parent upset, but her reaction is about her inability to accept limits, not about your love. Why do you believe that "loving someone" means "obeying them"?
+--- SAMPLE 9 ---
+[Context]: I have no motivation. I just want to stay in bed all day.
+[Response]: Depression zaps our energy. The key is "behavioral activation"—doing things even when you don't want to. Start with something very small, like brushing your teeth.
+--- SAMPLE 10 ---
+[Context]: Everyone else seems to have their life together except me. I'm 30 and I have nothing to show for it.
+[Response]: It's easy to compare our "behind-the-scenes" with everyone else's "highlight reel" on social media. Everyone struggles, even if they don't show it. Define "success" for yourself, not by society's timeline.
+</corpus_sample>
+## YOUR TASK
+1. **Apply the Lens:** Scan these 10 samples.
+2. **Classify:** Label each as [MECHANICAL] or [TRANSFORMATIVE].
+3. **Hunt:** Find the 1 or 2 examples here that might be transformative (hint: look for ontological shifts).
+4. **Report:** Show me the verdict table and explain the transformative ones deeply.
+
+Show less
+13:21
+
+Thought process
+52s
+
+The user has provided a clean, manually-extracted corpus of 10 mental health counseling interactions. Now I can apply the CGI (Context Grammar Induction) lens properly without the parquet parsing issues.
+
+Let me analyze each sample using the CGI framework:
+
+Decision Question: Does the response shift the user's UNDERLYING FRAME (how they see themselves, their problem, or what's possible) OR does it only validate/optimize WITHIN that frame?
+
+Transformative Signals:
+
+Challenges the user's self-definition or identity narrative
+Reframes the problem ontology (what the problem "is")
+Questions implicit assumptions about cause/solution
+Opens new possibility space not in user's original frame
+Mechanical Signals:
+
+Validates feelings without examining their source
+Offers techniques to manage symptoms (not causes)
+Provides information within user's existing frame
+Suggests professional help (defers transformation)
+Gives behavioral advice within current worldview
+Normalizes the experience
+Let me go through each:
+
+SAMPLE 1:
+
+Context: "I feel like I'm a burden... depression is making me push people away"
+Response: "It sounds like you are carrying a heavy weight of guilt. Depression often lies to us and tells us we are burdens. Have you shared these feelings with any of your friends or family?"
+Analysis:
+
+"It sounds like" = Validation/reflection (MECHANICAL)
+"Depression often lies to us" = This is interesting - it reframes depression as an external voice that LIES. This could be seen as a mild ontological shift (the feeling isn't truth, it's a lie told by depression)
+"Have you shared these feelings" = Behavioral advice (MECHANICAL)
+This is borderline. The "depression lies to us" is a reframe, but it's a common therapeutic cliche. The response doesn't deeply challenge WHO the user is or WHERE the voice comes from. It's more like "your depression is lying" which is validation-with-a-twist rather than true transformation.
+
+Verdict is mechanical, with a hint of reframing that isn't deep enough.
+
+SAMPLE 2:
+
+Context: "I have a job interview tomorrow and I'm terrified. I keep thinking I'm going to freeze up"
+Response: "It is completely normal to feel nervous before a big interview. Try to visualize yourself succeeding. Also, remember to take deep breaths if you feel panic rising."
+I see the response primarily offers standard coping mechanisms. The counselor normalizes the anxiety and provides basic stress management techniques. These are mechanical interventions that keep the user within their current frame of experiencing fear as an obstacle. There's no deeper exploration of why the user anticipates freezing or challenging the underlying belief about their capabilities.
+
+The response uses typical mechanical signals: normalizing the experience and suggesting behavioral techniques to manage symptoms. It doesn't transform the user's fundamental perception of their interview performance potential. The response remains purely mechanical, offering a technique without exploring the deeper psychological roots of the obsessive thinking. It fails to challenge the underlying belief system that makes every minor mistake feel catastrophic. The grounding exercise is a surface-level coping mechanism that doesn't address why the person feels such intense shame and self-criticism.
+
+Verdict: MECHANICAL (high confidence)
+
+The response provides a technical solution without investigating the emotional landscape driving the obsessive thought patterns. By recommending a distraction technique, it sidesteps the critical questions about self-worth and internal judgment that fuel the rumination. The counselor skillfully deconstructs the user's self-perception by revealing anger's deeper emotional layers. By identifying anger as a secondary emotion masking underlying hurt or fear, the response transforms the user's narrative from self-condemnation to compassionate understanding. The approach challenges the user's "monster" self-label and invites exploration of the triggering experiences preceding emotional eruptions.
+
+The intervention strategically reframes the ontological structure, shifting from a punitive self-view to a more nuanced, empathetic perspective. By offering "overwhelmed" as an alternative identity, the counselor creates space for self-reflection and healing.
+
+Verdict: Profoundly transformative approach with high potential for personal insight and emotional recalibration.
+
+The response exemplifies a purely mechanical intervention, prioritizing surface-level techniques over deeper psychological exploration. By focusing exclusively on sleep hygiene and technical solutions, the guidance misses the critical emotional landscape underlying the client's distress.
+
+Verdict: Textbook mechanical response that fundamentally fails to engage with the client's core emotional experience.
+
+The response demonstrates sophisticated reframing, challenging the client's internalized belief system about love and boundaries. By questioning the implicit assumption that love equals unconditional compliance, the counselor introduces a more mature, self-protective relational paradigm.
+
+Verdict: Transformative approach that deconstructs harmful relational narratives.
+
+The intervention represents a nuanced approach to addressing depression, introducing the concept of behavioral activation while normalizing the client's experience of energy depletion. By recommending a minimal, achievable action, the response provides a pragmatic entry point for psychological recovery.
+
+Verdict: Mechanically sound strategy with potential for meaningful psychological intervention.
+
+The response challenges social comparison by exposing the illusion of curated online personas. By encouraging personal definition of success, the counselor shifts the client's perspective from external validation to internal meaning-making, subtly disrupting destructive comparative thinking.
+
+The advice hints at deeper potential but remains surface-level. A truly transformative approach would probe the underlying narratives driving the client's sense of inadequacy, exploring the internalized standards and unexamined assumptions about achievement.
+
+The verdict suggests a nuanced mechanical response - technically offering insight but stopping short of genuine exploratory dialogue. The recommendation implies that meaningful change requires moving beyond generic advice to deep, personalized questioning.
+
+The analysis reveals a critical distinction between psychoeducation and transformative inquiry. While stating "depression lies" provides information, it lacks the depth of challenging core beliefs and inviting self-reflection.
+
+The comparison with Sample 6 highlights the power of directly challenging self-definition and offering alternative perspectives that invite deeper examination of one's internal narrative.
+
+The final assessment shows promising progress: identifying three genuinely transformative responses amid a larger set of mechanical approaches, suggesting potential for more profound therapeutic communication strategies.
+
+
+┌─────────────────┬───────┐
+│ Karar           │ Sayı  │
+├─────────────────┼───────┤
+│ DÖNÜŞTÜRÜCÜ     │ 3     │
+│ MEKANİK         │ 7     │
+└─────────────────┴───────┘
+
+🔥 Dönüştürücü Örnekler:
+- #5: Kimlik çözülmesi ("Altta kalan kim?")
+- #6: Canavar yeniden çerçeveleme ("Canavar DEĞİLSİNİZ")
+- #8: Gizli denklem ("Sevgi = itaat mı?")

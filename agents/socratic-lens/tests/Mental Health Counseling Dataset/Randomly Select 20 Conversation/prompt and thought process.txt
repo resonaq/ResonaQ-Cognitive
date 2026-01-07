@@ -1,0 +1,87 @@
+# MISSION: CGI ANALYSIS ON UPLOADED DATASET
+I have uploaded the file 0000.parquet which contains the mental health counseling dataset. --https://huggingface.co/datasets/Amod/mental_health_counseling_conversations
+The columns are:
+- Context (User input)
+- Response (Counselor input)
+## YOUR TASK
+Use your Python (Code Interpreter) tool to perform the following steps sequentially:
+1. **LOAD & SAMPLE:**
+   - Read the parquet file.
+   - Randomly select **20 conversation pairs** to analyze. (Do not analyze the whole file yet).
+2. **APPLY THE LENS:**
+   - For each of the 20 pairs, apply the **CGI (Socratic Lens)** rules you possess.
+   - **Decision Question:** Does the counselor's response shift the user's underlying frame (Ontology/Belief) or just validate/optimize it?
+3. **CLASSIFY:**
+   - Label each as [MECHANICAL] or [TRANSFORMATIVE].
+   - *Reminder:* Validating feelings, giving standard advice, or asking for clarification is MECHANICAL. Challenging the "judge" or the "definition of self" is TRANSFORMATIVE.
+4. **REPORT:**
+   - Output a table of the 20 samples.
+   - **CRITICAL:** If you find any [TRANSFORMATIVE] examples, highlight them and explain the "Ontological Shift" in detail.
+   - If all are Mechanical, explicitly state: "No context shifts found in this batch."
+Start the Python script now.
+
+Show less
+12:56
+
+10 steps
+
+Better text extraction to find conversation pairs
+
+
+
+Understanding parquet file structure
+
+
+The parquet file structure is becoming clearer. Let me write a proper extractor:
+
+
+1 step
+
+Alternative approach to extract conversation data
+
+
+
+Extract conversation patterns without snappy
+
+
+The data is compressed with some binary encoding. Let me try a different approach - using the raw strings more carefully:
+
+
+Extract clean conversation texts
+
+
+Now I have clean data. Let me build a more robust extractor and then apply the CGI analysis:
+
+
+Run the full CGI analysis on the mental health counseling data
+
+
+Now let me create a proper formatted report and run the analysis again with a fresh sample to ensure reproducibility:
+
+
+Generate the final CGI analysis report
+
+
+
+Presented file
+
+CGI Analysis Complete
+Key Finding: No context shifts found in this batch.
+All 20 sampled counselor responses operate MECHANICALLY:
+PatternCountProfessional referral ("see a therapist")12Technique recommendation9Behavioral advice7Validation/reflection2
+What this means:
+The counselors in this dataset predominantly help users cope within their existing frame rather than transforming that frame. They validate feelings, recommend coping techniques, and refer to professionals—all valuable interventions, but none that challenge:
+
+The user's self-concept ("I am broken/anxious/depressed")
+The problem's ontology (what the problem really is)
+Hidden assumptions about what's possible
+
+A truly transformative response would look like:
+
+"You say you're 'worthless'—but worthless to whom? Whose voice is that? What would it mean if that judge were wrong?"
+
+Instead, most responses look like:
+
+"It sounds like you're struggling. Have you considered seeing a therapist? Here are some breathing techniques..."
+
+The report is available above with the full 20-sample table and Socratic meta-reflection.Cgi analysis reportDocument · MD Download
