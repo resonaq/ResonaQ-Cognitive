@@ -1,0 +1,31 @@
+# ResonaQ-Cognitive Runtime Dependencies
+# Phase 1: Foundation
+
+# Core LangGraph & LangChain
+langgraph>=0.2.0
+langchain>=0.3.0
+langchain-core>=0.3.0
+
+# LLM Providers
+anthropic>=0.40.0  # Claude API (primary)
+openai>=1.50.0     # GPT-4 API (optional)
+
+# State & Memory
+chromadb>=0.5.0    # Vector store for long-term memory
+
+# Data Validation & Parsing
+pydantic>=2.9.0    # Type validation
+pyyaml>=6.0        # YAML parsing (CGI chains)
+
+# Data Processing (for e-score compatibility)
+pandas>=2.0.0
+numpy>=1.24.0
+
+# Testing
+pytest>=8.0.0
+pytest-asyncio>=0.23.0
+
+# Development Tools
+black>=24.0.0      # Code formatting
+mypy>=1.8.0        # Type checking
+ruff>=0.2.0        # Linting
