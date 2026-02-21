@@ -2,6 +2,28 @@
 Descriptive map of a layered resonance system (informational, not prescriptive)
 Katmanlı yankı sistemine dair betimsel harita (bilgilendirici, yönerge değil)
 
+---
+
+## 🚀 Quick Start / Hızlı Başlangıç
+
+**New to ResonaQ?** Start here → **[BASLANGIC.md](BASLANGIC.md)** - Full guide on how to run, use, and develop
+
+**ResonaQ'ya yeni misin?** Buradan başla → **[BASLANGIC.md](BASLANGIC.md)** - Nasıl çalıştırılır, kullanılır ve geliştirilir
+
+```bash
+# Test the system / Sistemi test et
+python resonaq-cli.py --test
+
+# See what we built / Ne yaptığımızı gör
+python runtime/bio_rhythm_graph.py
+```
+
+**Status:** Phase 1 (Foundation) completed - Bio-rhythm cycle, resonance metrics, and anti-vibe-coding architecture operational.
+
+**Durum:** Faz 1 (Temel) tamamlandı - Bio-rhythm döngüsü, rezonans metrikleri ve anti-vibe-coding mimarisi çalışıyor.
+
+---
+
 ## What is ResonaQ?
 ResonaQ is a cognitive architecture that treats prompts as interfaces, not identities. It keeps ontology and constraints in a kernel, applies policy only for visibility and format, and treats contradiction as energy rather than failure.
 
